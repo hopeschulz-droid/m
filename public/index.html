@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>uhuh — Private Playwright Proxy</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>uhuh — Private Playwright Proxy</h1>
+    <p class="muted">Render pages privately using Playwright. Your token never leaves your browser storage.</p>
+  </header>
+
+  <main>
+    <section id="auth">
+      <label>API Token
+        <input id="tokenInput" type="password" placeholder="Enter API token" />
+      </label>
+      <button id="saveToken">Save token</button>
+      <button id="clearToken" class="secondary">Clear</button>
+      <p class="muted small">Token is stored locally (localStorage) for convenience.</p>
+    </section>
+
+    <section id="controls" class="hidden">
+      <div class="row">
+        <input id="urlInput" type="text" placeholder="https://example.com" />
+        <button id="renderBtn">Render</button>
+      </div>
+
+      <div class="options">
+        <label>Viewport
+          <input id="viewportInput" type="text" value="1280x720" />
+        </label>
+        <label>Screenshot quality (1-100)
+          <input id="qualityInput" type="number" min="1" max="100" value="70" />
+        </label>
+        <label>
+          <input id="screenshotOnly" type="checkbox" />
+          Screenshot only (no HTML)
+        </label>
+      </div>
+
+      <div class="row history-row">
+        <select id="historySelect"></select>
+        <button id="addToHistory" class="secondary">Save to History</button>
+        <button id="clearHistory" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section id="results" class="hidden">
+      <div class="meta">
+        <span id="status">Status: —</span>
+        <button id="downloadScreenshot" class="secondary hidden">Download screenshot</button>
+        <button id="downloadHtml" class="secondary hidden">Download HTML</button>
+      </div>
+
+      <div id="loading" class="hidden">Rendering…</div>
+
+      <div class="panels">
+        <div class="panel">
+          <h3>Screenshot</h3>
+          <div id="screenshotContainer" class="placeholder">No screenshot yet</div>
+        </div>
+        <div class="panel">
+          <h3>Preview (sandboxed)</h3>
+          <iframe id="previewFrame" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox" srcdoc="" title="preview"></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h3>Raw HTML</h3>
+        <pre id="rawHtml" class="raw"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small class="muted">Do not expose this service publicly without additional auth, rate-limits and monitoring.</small>
+  </footer>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
