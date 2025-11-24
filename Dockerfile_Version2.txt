@@ -1,0 +1,15 @@
+# Use official Playwright image to simplify dependencies
+FROM mcr.microsoft.com/playwright:focal
+
+WORKDIR /usr/src/app
+
+COPY package.json package.json
+RUN npm install --production
+
+COPY . .
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+EXPOSE 3000
+CMD [ "node", "src/server.js" ]

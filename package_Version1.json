@@ -1,0 +1,18 @@
+{
+  "name": "uhuh-playwright-proxy",
+  "version": "0.1.0",
+  "description": "Playwright-based private web proxy (minimal scaffold)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.40.0",
+    "helmet": "^6.0.0",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^6.7.0",
+    "pino": "^8.0.0",
+    "body-parser": "^1.20.2"
+  }
+}

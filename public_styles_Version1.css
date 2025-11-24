@@ -1,0 +1,26 @@
+:root{
+  --bg:#fbfbfc; --fg:#111; --muted:#6b7280; --accent:#2563eb;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Arial; margin:0; color:var(--fg); background:var(--bg); padding:24px; line-height:1.4}
+header h1{margin:0 0 4px}
+.muted{color:var(--muted)}
+.small{font-size:0.9rem}
+.hidden{display:none}
+.row{display:flex; gap:8px; align-items:center}
+input[type=text], input[type=password], select, input[type=number]{
+  padding:8px; border:1px solid #e5e7eb; border-radius:6px; flex:1; background:white;
+}
+button{background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer}
+button.secondary{background:#efefef; color:var(--fg)}
+main{max-width:1100px; margin:16px auto}
+section{margin:12px 0; padding:12px; background:white; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.options{display:flex; gap:12px; margin-top:8px; align-items:center}
+.history-row{margin-top:8px}
+.meta{display:flex; gap:12px; align-items:center; margin-bottom:8px}
+.panels{display:flex; gap:12px}
+.panel{flex:1}
+#previewFrame{width:100%; height:400px; border:1px solid #e5e7eb; border-radius:6px}
+#screenshotContainer{min-height:200px; display:flex; align-items:center; justify-content:center; border:1px dashed #e5e7eb; border-radius:6px; padding:8px}
+.raw{white-space:pre-wrap; background:#f8f9fb; padding:12px; border-radius:6px; max-height:360px; overflow:auto}
+footer{text-align:center; margin-top:18px}
